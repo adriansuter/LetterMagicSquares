@@ -10,6 +10,10 @@ Calculates letter magic squares and generates a TeX file which can be used to bu
 
 ## Usage
 
+Download the jar-file ([LetterMagicSquares.jar](https://github.com/adriansuter/LetterMagicSquares/raw/master/LetterMagicSquares.jar))
+as well as the dictionary txt-file ([EnglishNumberDictionary.txt](https://github.com/adriansuter/LetterMagicSquares/raw/master/EnglishNumberDictionary.txt)).
+Place both files into the same directory and run
+
 ```
 java -jar LetterMagicSquares.jar <min> <max> [ <dictionary> ]
 ```
