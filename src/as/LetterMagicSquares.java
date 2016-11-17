@@ -21,14 +21,49 @@ public class LetterMagicSquares {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String usage = "Usage:\n\n"
+                + "java -jar LetterMagicSquares.jar <min> <max> [ <dictionary> ]\n\n"
+                + "  where <min> and <max> need to be between 1 and 999 (the default\n"
+                + "  dictionary contains only the words for these numbers) and the\n"
+                + "  optional <dictionary> is the filename of the dictionary to\n"
+                + "  be used.\n";
+        if (args.length < 2) {
+            System.out.println(usage);
+            System.exit(0);
+        }
+
+        int min = 0;
+        try {
+            min = Integer.parseInt(args[0]);
+            if (min < 1 || min > 999) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(usage);
+            System.exit(0);
+        }
+
+        int max = 0;
+        try {
+            max = Integer.parseInt(args[1]);
+            if (max < 1 || max > 999) {
+                throw new NumberFormatException();
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(usage);
+            System.exit(0);
+        }
+
+        String dictionaryFileName = "EnglishNumberDictionary.txt";
+        if (args.length > 2) {
+            dictionaryFileName = args[2];
+        }
 
         try {
-            NumberDictionary numberDictionary = new NumberDictionary("EnglishNumberDictionary.txt");
+            NumberDictionary numberDictionary = new NumberDictionary(dictionaryFileName);
 
             TreeMap<Integer, ArrayList<String>> sortedLetterMagicSquares = new TreeMap<>();
 
-            int min = 1;
-            int max = 99;
             int number;
             for (int a = 1; a <= max; a++) {
                 for (int b = a + 1; b <= max; b++) {
@@ -69,7 +104,7 @@ public class LetterMagicSquares {
                         Square wordLengthSquare = new Square(3, wordLengths);
                         if (wordLengthSquare.isMagic(false)) {
                             StringBuilder sb = new StringBuilder();
-                            sb.append("\\section{Magic Sum = ").append(square.sumOfFirstRow());
+                            sb.append("\\section{Magic sum is ").append(square.sumOfFirstRow());
                             if (wordLengthSquare.isMagic()) {
                                 sb.append(" - I am truly magic");
                             }
@@ -124,17 +159,19 @@ public class LetterMagicSquares {
                 texWriter.write("\\vspace{1.5cm}\n");
                 texWriter.write("{\\huge\\bfseries Letter Magic Squares\\par}\n");
                 texWriter.write("\\vspace{1.5cm}\n");
-                texWriter.write("{\\huge $a_{i,j} \\in [" + min + ", " + max + "] \\hspace{1em} \\forall \\hspace{1em} i,j \\in [1,3]$\\par\n}");
-                texWriter.write("\\vspace{2cm}\n");
+                texWriter.write("{\\large $a_{i,j} \\in [" + min + ", " + max + "] \\hspace{1em} \\forall \\hspace{1em} i,j \\in [1,3]$\\par\n");
+                texWriter.write("Dictionary: " + dictionaryFileName + "\\par\n}");
+                texWriter.write("\\vspace{5cm}\n");
                 texWriter.write("{\\Large\\itshape Adrian Suter\\par}\n");
                 texWriter.write("\\vspace{1cm}\n");
                 texWriter.write("{\\large \\today\\par}\n");
-                texWriter.write("\\vspace{2cm}\n");
+                texWriter.write("\\vfill\n");
                 texWriter.write("generated and calculated by\\par\n");
                 texWriter.write("https://github.com/adriansuter/LetterMagicSquares\\par\n");
                 texWriter.write("\\vspace{1cm}\n");
                 texWriter.write("inspired by Matt Parker\\par\n");
                 texWriter.write("http://standupmaths.com/\\footnote{https://www.youtube.com/watch?v=cZ1W1vbuYuQ}\\par\n");
+                texWriter.write("\\vspace{2cm}\n");
                 texWriter.write("\\end{titlepage}\n");
 
                 int counter = 0;

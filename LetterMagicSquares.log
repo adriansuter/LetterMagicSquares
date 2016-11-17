@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.10)  17 NOV 2016 12:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.11.10)  17 NOV 2016 13:10
 entering extended mode
 **./LetterMagicSquares.tex
 (LetterMagicSquares.tex
@@ -457,40 +457,36 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 8.
 \c__siunitx_mathtt_int=\count142
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 15.
-LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
+(Font)              <6> on input line 15.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [1] [2] [3]
 (LetterMagicSquares.aux) ) 
 Here is how much of TeX's memory you used:
- 11081 strings out of 493334
- 237698 string characters out of 3139248
+ 11070 strings out of 493334
+ 237517 string characters out of 3139248
  253450 words of memory out of 3000000
- 14587 multiletter control sequences out of 15000+200000
- 13538 words of font info for 50 fonts, out of 3000000 for 9000
+ 14577 multiletter control sequences out of 15000+200000
+ 11357 words of font info for 42 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,15n,33p,10408b,378s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fon
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb
 >
-Output written on LetterMagicSquares.pdf (4 pages, 128430 bytes).
+Output written on LetterMagicSquares.pdf (4 pages, 131893 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
