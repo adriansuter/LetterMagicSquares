@@ -2,9 +2,21 @@ package as;
 
 import java.util.ArrayList;
 
+/**
+ * A magic square.
+ *
+ * @author Adrian Suter, https://github.com/adriansuter/
+ */
 public class Square {
 
+    /**
+     * The numbers.
+     */
     private final ArrayList<Integer> _numbers;
+
+    /**
+     * The order of the magic square.
+     */
     private final int _order;
 
     /**
@@ -14,7 +26,10 @@ public class Square {
      * @param numbers
      */
     public Square(int order, ArrayList<Integer> numbers) {
-        // No error checking here (actually we should check if numbers.size() is the square of order).
+        if (Math.pow(order, 2) != numbers.size()) {
+            throw new IllegalArgumentException("Wrong number of numbers for the given order.");
+        }
+
         this._numbers = numbers;
         this._order = order;
     }
