@@ -18,6 +18,8 @@ import java.util.TreeMap;
 public class LetterMagicSquares {
 
     /**
+     * The main method (entry point).
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -64,7 +66,6 @@ public class LetterMagicSquares {
 
             TreeMap<Integer, ArrayList<String>> sortedLetterMagicSquares = new TreeMap<>();
 
-            int number;
             for (int a = 1; a <= max; a++) {
                 for (int b = a + 1; b <= max; b++) {
                     for (int c = b + 1; c <= max; c++) {
@@ -144,7 +145,7 @@ public class LetterMagicSquares {
             // Write the tex file.
             File texFile = new File("LetterMagicSquares.tex");
             texFile.createNewFile();
-            try (BufferedWriter texWriter = new BufferedWriter(new FileWriter(texFile))) {
+            try ( BufferedWriter texWriter = new BufferedWriter(new FileWriter(texFile))) {
                 texWriter.write("\\documentclass{article}\n");
                 texWriter.write("\\usepackage{geometry}\n");
                 texWriter.write("\\geometry{a4paper, portrait, left=1.5cm, right=1.5cm, top=2.5cm, bottom=2cm}\n");
