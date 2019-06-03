@@ -6,7 +6,7 @@ package as;
  *
  * @author Adrian Suter, https://github.com/adriansuter/
  */
-public class NumberWord {
+class NumberWord {
 
     private final String _word;
     private final int _length;
@@ -14,9 +14,9 @@ public class NumberWord {
     /**
      * Constructor.
      *
-     * @param word
+     * @param word the number as a word
      */
-    public NumberWord(String word) {
+    NumberWord(String word) {
         this._word = word;
 
         // We count only non-space characters.
@@ -26,19 +26,19 @@ public class NumberWord {
     /**
      * Length of the word.
      *
-     * @return
+     * @return the length of the number as a word
      */
-    public int length() {
+    int length() {
         return _length;
     }
 
     /**
      * The word.
      *
-     * @return
+     * @return the number as a word
      */
-    public String word() {
+    String word() {
         return _word;
     }
-
+    
 }
