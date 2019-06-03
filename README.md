@@ -14,18 +14,19 @@ Download the jar-file ([LetterMagicSquares.jar](https://github.com/adriansuter/L
 as well as the dictionary txt-file ([EnglishNumberDictionary.txt](https://github.com/adriansuter/LetterMagicSquares/raw/master/EnglishNumberDictionary.txt)).
 Place both files into the same directory and run
 
-```
+```bash
 java -jar LetterMagicSquares.jar <min> <max> [ <dictionary> ]
 ```
 
-where `<min>` and `<max>` need to be between 1 and 999 (the default dictionary contains only the words for these numbers) and the optional `<dictionary>` is the filename of the dictionary to be used.
+where `<min>` and `<max>` need to be between 1 and 999 (the default dictionary contains only the words for these numbers)
+and the optional `<dictionary>` is the filename of the dictionary to be used.
 
 
 ## Build the pdf
 
 The command to build the pdf is as follows:
 
-```
+```bash
 pdflatex -synctex=1 -interaction=nonstopmode LetterMagicSquares.tex
 ```
 
