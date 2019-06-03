@@ -22,10 +22,10 @@ public class Square {
     /**
      * Constructor.
      *
-     * @param order
-     * @param numbers
+     * @param order   the order
+     * @param numbers the numbers of the square
      */
-    public Square(int order, ArrayList<Integer> numbers) {
+    Square(int order, ArrayList<Integer> numbers) {
         if (Math.pow(order, 2) != numbers.size()) {
             throw new IllegalArgumentException("Wrong number of numbers for the given order.");
         }
@@ -34,15 +34,15 @@ public class Square {
         this._order = order;
     }
 
-    public int getNumber(int row, int col) {
+    int getNumber(int row, int col) {
         return _numbers.get(row * _order + col);
     }
 
-    public boolean isMagic() {
+    boolean isMagic() {
         return isMagic(true);
     }
 
-    public boolean isMagic(boolean checkDistinct) {
+    boolean isMagic(boolean checkDistinct) {
         if (checkDistinct) {
             for (int i = 0; i < _numbers.size(); i++) {
                 for (int j = i + 1; j < _numbers.size(); j++) {
@@ -61,7 +61,7 @@ public class Square {
                 sum += _numbers.get(i * _order + j);
             }
             if (i == 0) {
-                // This is the firt row.
+                // This is the first row.
                 s = sum;
             } else if (sum != s) {
                 return false;
@@ -91,11 +91,8 @@ public class Square {
         for (int i = 0; i < _order; i++) {
             sum += _numbers.get((i + 1) * _order - i - 1);
         }
-        if (sum != s) {
-            return false;
-        }
 
-        return true;
+        return sum == s;
     }
 
     @Override
@@ -117,6 +114,9 @@ public class Square {
         return sb.toString();
     }
 
+    /**
+     * @deprecated
+     */
     public void rotate() {
         ArrayList<Integer> clone = (ArrayList<Integer>) _numbers.clone();
 
@@ -127,6 +127,9 @@ public class Square {
         }
     }
 
+    /**
+     * @deprecated
+     */
     public void reflect() {
         ArrayList<Integer> clone = (ArrayList<Integer>) _numbers.clone();
 
@@ -137,7 +140,7 @@ public class Square {
         }
     }
 
-    public int sumOfFirstRow() {
+    int sumOfFirstRow() {
         int sum = 0;
         for (int i = 0; i < _order; i++) {
             sum += _numbers.get(i);
