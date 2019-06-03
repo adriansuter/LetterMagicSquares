@@ -11,7 +11,7 @@ import java.util.HashMap;
  *
  * @author Adrian Suter, https://github.com/adriansuter/
  */
-public class NumberDictionary {
+class NumberDictionary {
 
     /**
      * The dictionary.
@@ -21,10 +21,9 @@ public class NumberDictionary {
     /**
      * Constructor.
      *
-     * @param fileName
-     * @throws IOException
+     * @param fileName the file name
      */
-    public NumberDictionary(String fileName) throws IOException {
+    NumberDictionary(String fileName) throws IOException {
         int number = 0;
         File numberDictionaryFile = new File(fileName);
         try (BufferedReader numberDictionaryBufferedReader = new BufferedReader(new FileReader(numberDictionaryFile))) {
@@ -40,11 +39,10 @@ public class NumberDictionary {
     /**
      * Gets the number word given its number.
      *
-     * @param number
-     * @return
-     * @throws IndexOutOfBoundsException
+     * @param number the number
+     * @return the number as a word
      */
-    public String getWord(int number) throws IndexOutOfBoundsException {
+    String getWord(int number) throws IndexOutOfBoundsException {
         NumberWord numberWord = _numberDictionary.get(number);
         if (null == numberWord) {
             throw new IndexOutOfBoundsException();
@@ -55,11 +53,10 @@ public class NumberDictionary {
     /**
      * Gets the length of the number word given its number.
      *
-     * @param number
-     * @return
-     * @throws IndexOutOfBoundsException
+     * @param number the number
+     * @return the length of the number as a word
      */
-    public int getWordLength(int number) throws IndexOutOfBoundsException {
+    int getWordLength(int number) throws IndexOutOfBoundsException {
         NumberWord numberWord = _numberDictionary.get(number);
         if (null == numberWord) {
             throw new IndexOutOfBoundsException();
