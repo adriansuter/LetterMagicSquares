@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -64,7 +63,7 @@ public class LetterMagicSquares {
         try {
             NumberDictionary numberDictionary = new NumberDictionary(dictionaryFileName);
 
-            TreeMap<Integer, ArrayList<String>> sortedLetterMagicSquares = new TreeMap();
+            TreeMap<Integer, ArrayList<String>> sortedLetterMagicSquares = new TreeMap<>();
 
             for (int a = 1; a <= max; a++) {
                 for (int b = a + 1; b <= max; b++) {
@@ -97,8 +96,8 @@ public class LetterMagicSquares {
 
                         // Get the corresponding word length.
                         ArrayList<Integer> wordLengths = new ArrayList<>();
-                        for (int i = 0; i < numbers.size(); i++) {
-                            wordLengths.add(numberDictionary.getWordLength(numbers.get(i)));
+                        for (Integer number : numbers) {
+                            wordLengths.add(numberDictionary.getWordLength(number));
                         }
 
                         // Build the word-length square.
@@ -144,7 +143,7 @@ public class LetterMagicSquares {
 
             // Write the tex file.
             File texFile = new File("LetterMagicSquares.tex");
-            texFile.createNewFile();
+            boolean ignored = texFile.createNewFile();
             try (BufferedWriter texWriter = new BufferedWriter(new FileWriter(texFile))) {
                 texWriter.write("\\documentclass{article}\n");
                 texWriter.write("\\usepackage{geometry}\n");
@@ -176,13 +175,8 @@ public class LetterMagicSquares {
                 texWriter.write("\\end{titlepage}\n");
 
                 int counter = 0;
-                Iterator<Map.Entry<Integer, ArrayList<String>>> iterator = sortedLetterMagicSquares.entrySet().iterator();
-                while (iterator.hasNext()) {
-                    Map.Entry<Integer, ArrayList<String>> entry = iterator.next();
-
-                    Iterator<String> itemsIterator = entry.getValue().iterator();
-                    while (itemsIterator.hasNext()) {
-                        String item = itemsIterator.next();
+                for (Map.Entry<Integer, ArrayList<String>> entry : sortedLetterMagicSquares.entrySet()) {
+                    for (String item : entry.getValue()) {
                         counter++;
                         if (counter > 1) {
                             texWriter.write("\\vspace{2em} \n");
