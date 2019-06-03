@@ -41,4 +41,4 @@ The example had been built with http://www.miktex.org/.
 
 ## Development
 
-The IDE for this project is NetBeans.
+The IDE for this project is IntelliJ IDEA (Community).
